@@ -1,12 +1,12 @@
 # Gemfile
 source 'https://rubygems.org'
-ruby '3.3.6'  # Specify your Ruby version
+ruby '3.3.1'  # Specify your Ruby version
 
 # Core gems
 gem 'sinatra'
 gem 'sinatra-contrib'  # Helpful Sinatra extensions
 gem 'puma'            # Web server
-gem 'json', '~> 2.6.3'
+gem 'json'            # JSON support
 gem 'sinatra-cors'    # For CORS support
 gem 'rackup'
 gem 'sqlite3'
