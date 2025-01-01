@@ -21,7 +21,7 @@ end
 # Setup db connection for tactics
 db = SQLite3::Database.new('tactics.db')
 
-get '/' do
+get '/api' do
   "hello"
 end
 # Gets 10 random puzzles for a certain theme
