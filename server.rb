@@ -21,6 +21,9 @@ end
 # Setup db connection for tactics
 db = SQLite3::Database.new('tactics.db')
 
+get '/' do
+  "hello"
+end
 # Gets 10 random puzzles for a certain theme
 get '/puzzles/:theme' do
   content_type :json
@@ -28,7 +31,7 @@ get '/puzzles/:theme' do
   response = []  
   for puzzle in puzzles
     response.append({
-      
+
       name: "sample",
       difficulty: "1200",
       fen: puzzle[1],

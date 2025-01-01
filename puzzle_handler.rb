@@ -1,8 +1,6 @@
 require 'csv'
 require 'sqlite3'
 
-DELETE FROM puzzles WHERE rowid IN (SELECT rowid FROM puzzles LIMIT 500000);
-
 module PuzzleHandler
 
   def find_puzzles_by_theme(db, theme)

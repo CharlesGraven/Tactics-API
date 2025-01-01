@@ -1,6 +1,6 @@
 # Gemfile
 source 'https://rubygems.org'
-ruby '3.3.1'  # Specify your Ruby version
+ruby '3.3.6'  # Specify your Ruby version
 
 # Core gems
 gem 'sinatra'
