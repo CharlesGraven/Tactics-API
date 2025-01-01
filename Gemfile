@@ -6,7 +6,7 @@ ruby '3.3.6'  # Specify your Ruby version
 gem 'sinatra'
 gem 'sinatra-contrib'  # Helpful Sinatra extensions
 gem 'puma'            # Web server
-gem 'json'            # JSON support
+gem 'json', '~> 2.6.3'
 gem 'sinatra-cors'    # For CORS support
 gem 'rackup'
 gem 'sqlite3'
