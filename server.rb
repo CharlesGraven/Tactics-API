@@ -19,13 +19,13 @@ end
 # TODO phase out username to use real auth from lichess
 
 # Setup db connection for tactics
-db = SQLite3::Database.new('tactics.db')
+db = SQLite3::Database.new('tactics-subset.db')
 
 get '/api' do
   "hello"
 end
 # Gets 10 random puzzles for a certain theme
-get '/puzzles/:theme' do
+get '/api/puzzles/:theme' do
   content_type :json
   puzzles = PuzzleHandler.find_puzzles(db, params[:theme], 10)
   response = []  
@@ -43,13 +43,13 @@ get '/puzzles/:theme' do
 end
 
 # Gets a set of themes and subsequent puzzles for a user
-get '/puzzles_for_user/:username' do
+get '/api/puzzles_for_user/:username' do
   # TODO find specific puzzles for certain users
   puzzles = PuzzleHandler.find_puzzles(db, params[:username], 10)
   "#{puzzles}"
 end
 
-get '/puzzle_training' do
+get 'api/puzzle_training' do
   content_type :json
   response = [
     { 
