@@ -8,12 +8,21 @@ require_relative 'puzzle_handler'
 require 'bundler'
 Bundler.require
 
-# CORS configuration
+# CORS
 configure do
   enable :cors
-  set :allow_origin, "*" # For now allow all origin requrest
-    set :allow_methods, "GET,HEAD,POST,PUT,DELETE,OPTIONS"
-  set :allow_headers, "content-type,if-modified-since"
+  
+  set :allow_origin, "*"
+  set :allow_methods, "GET,HEAD,POST,PUT,DELETE,OPTIONS"
+  set :allow_headers, "content-type,if-modified-since,accept,origin,authorization"
+  set :expose_headers, "location,link"
+  set :allow_credentials, true
+  
+  options "*" do
+    response.headers["Allow"] = "HEAD,GET,PUT,POST,DELETE,OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept, Authorization"
+    200
+  end
 end
 
 # TODO phase out username to use real auth from lichess
