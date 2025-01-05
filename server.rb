@@ -58,7 +58,7 @@ get '/api/puzzles_for_user/:username' do
   "#{puzzles}"
 end
 
-get 'api/puzzle_training' do
+get '/api/puzzle_training' do
   content_type :json
   response = [
     { 
